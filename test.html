@@ -1,0 +1,3033 @@
+<!doctype html>
+<html data-theme="default" lang="en">
+    <script type="text/javascript" src="/C2WF946J0/probev3.js" r='m'></script>
+    <head>
+        <script async src="https://turing.captcha.qcloud.com/TCaptcha.js"></script>
+        <script>
+            try {
+                var name = "x-waf-captcha-referer"
+                  , reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)")
+                  , wafReferer = document.cookie.match(reg);
+                wafReferer && wafReferer[2] && (Object.defineProperty(document, "referrer", {
+                    value: decodeURIComponent(wafReferer[2])
+                }),
+                document.cookie = name + "=;path=/;expires=Thu, 01-Jan-1970 00:00:01 GMT")
+            } catch (e) {
+                console.log(e)
+            }
+        </script>
+        <script>
+            var name = "seo-jump-referrer";
+            try {
+                var reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)")
+                  , seoReferer = document.cookie.match(reg);
+                seoReferer && seoReferer[2] && (Object.defineProperty(document, "referrer", {
+                    value: decodeURIComponent(seoReferer[2])
+                }),
+                document.cookie = name + "=;domain=.qidian.com;path=/;expires=Thu, 01-Jan-1970 00:00:01 GMT")
+            } catch (a) {
+                console.log(a)
+            }
+            if (window.outerWidth <= 1024 && navigator.userAgent.match(/(Android|iPhone|SymbianOS|Windows Phone|iPad|iPod|HarmonyOS|Phone; OpenHarmony)/i) && !navigator.userAgent.match(/spider/i)) {
+                var url = getMUrl();
+                url && (location.search ? /source=m_jump/.test(location.search) ? url += location.search.replace("source=m_jump", "source=pc_jump") : /source=pc_jump/.test(location.search) ? url += location.search : url += location.search + "&source=pc_jump" : url += "?source=pc_jump",
+                setCookie(name, document.referrer, ".qidian.com", "/", 6e4),
+                console.log(url),
+                window.location.href = url)
+            }
+            function setCookie(a, o, t, e, i) {
+                i && (i = new Date(+new Date + i));
+                var c = a + "=" + escape(o) + (i ? "; expires=" + i.toGMTString() : "") + (e ? "; path=" + e : "") + (t ? "; domain=" + t : "");
+                return c.length < 4096 && (document.cookie = c),
+                this
+            }
+            function getMUrl() {
+                var a = ""
+                  , o = "https://" + a + "m.qidian.com/"
+                  , t = ""
+                  , e = document.URL;
+                "/" === location.pathname && (t = "https://" + a + "m.qidian.com/"),
+                "/xuanhuan/" === location.pathname && (t = "https://" + a + "m.qidian.com/category/catid21/"),
+                "/qihuan/" === location.pathname && (t = "https://" + a + "m.qidian.com/category/catid1/"),
+                "/wuxia/" === location.pathname && (t = "https://" + a + "m.qidian.com/category/catid2/"),
+                "/xianxia/" === location.pathname && (t = "https://" + a + "m.qidian.com/category/catid22/"),
+                "/dushi/" === location.pathname && (t = "https://" + a + "m.qidian.com/category/catid4/"),
+                "/xianshi/" === location.pathname && (t = "https://" + a + "m.qidian.com/category/catid15/"),
+                "/junshi/" === location.pathname && (t = "https://" + a + "m.qidian.com/category/catid6/"),
+                "/lishi/" === location.pathname && (t = "https://" + a + "m.qidian.com/category/catid5/"),
+                "/youxi/" === location.pathname && (t = "https://" + a + "m.qidian.com/category/catid7/"),
+                "/tiyu/" === location.pathname && (t = "https://" + a + "m.qidian.com/category/catid8/"),
+                "/kehuan/" === location.pathname && (t = "https://" + a + "m.qidian.com/category/catid9/"),
+                "/zhutianwuxian/" === location.pathname && (t = "https://" + a + "m.qidian.com/category/catid20109/"),
+                "/lingyi/" === location.pathname && (t = "https://" + a + "m.qidian.com/category/catid10/"),
+                "/2cy/" === location.pathname && (t = "https://" + a + "m.qidian.com/category/catid12/"),
+                "/duanpian/" === location.pathname && (t = "https://" + a + "m.qidian.com/category/catid20076/");
+                var i = location.pathname.match(/\/soushu\/(\S+|)/i);
+                if (i && (t = o + "soushu/" + i[1]),
+                (i = e.match(/\/book\/(strongrec|sanjiang)/i)) && (t = o + i[1] + "/"),
+                i = e.match(/\/(mm\/|)(free|finish)/i)) {
+                    var c = "mm" === i[1] ? "/female" : "";
+                    t = o + i[2] + c + "/"
+                }
+                if (i = e.match(/\/(mm\/|)all\/((chanId(\d+)|)(-subCateId(\d+)|)(-(\S+)|)\/|)/i)) {
+                    var c = "mm/" === i[1] ? "female" : "male";
+                    i[6] ? t = o + "category/catid" + i[4] + "/subcatid" + i[6] + "-" + c + "/" : i[4] && -1 == ["13100", "14300", "13700", "14100", "14400", "14500", "19100"].indexOf(i[4]) ? (c = ["80", "81", "82", "83", "84", "85", "86", "87", "88", "30083", "30120"].indexOf(i[4]) > -1 ? "/female" : "",
+                    t = o + "category/catid" + i[4] + c + "/") : t = o + "category" + (c = "mm/" === i[1] ? "/female" : "") + "/"
+                }
+                (i = e.match(/\/rank(\/mm|)(\/(yuepiao|readindex|hotsales|newfans|collect|recom|newauthor)|)/i)) && (t = o + "rank" + (c = "/mm" === i[1] ? "/female" : "") + i[2] + "/");
+                (i = e.match(/\/all_audio/i)) && (t = o + location.pathname.replace("/all_audio/", "liveaudiochannel/"));
+                return (i = e.match(/\/audiobook\/(\d+)/)) && (t = o + "liveaudiobookdetail/" + i[1]),
+                (i = e.match(/\/dashen/i)) && (t = o + "dashen/"),
+                (i = e.match(/\/honor\/(\d+)/)) && (t = o + "book/" + i[1] + "/badge"),
+                (i = e.match(/\/info\/(\d+)/)) && (t = o + "book/" + i[1] + ".html",
+                e.match(/#Catalog/) && (t = o + "book/" + i[1] + "/catalog/")),
+                (i = e.match(/\/bookrecommend\/([A-Za-z0-9]+)/)) && (t = o + "bookrecommend/" + i[1] + "/"),
+                (i = e.match(/\/recommendbooklist(\/p(\d+)|)/)) && (t = o + "recommendbooklist" + i[1] + "/"),
+                (i = e.match(/\/book\/(\d+)/)) && (t = o + "book/" + i[1] + "/",
+                e.match(/#Catalog/) && (t = o + "book/" + i[1] + "/catalog/")),
+                (i = e.match(/\/comicbook\/(\d+)/)) && (t = o + "comicbook/" + i[1] + "/",
+                e.match(/#Catalog/) && (t = o + "comicbook/" + i[1] + "/catalog/")),
+                (i = e.match(/\/ttsbook\/(\d+)\/(\d+)/)) && (t = o + "ttsbook/" + i[1] + "/" + i[2] + "/"),
+                (i = e.match(/\/book\/(\d+)\/catalog/)) && (t = o + "book/" + i[1] + "/catalog/"),
+                (i = e.match(/\/booklist/)) && (t = "https://" + a + "m.qidian.com" + location.pathname),
+                (i = e.match(/\/booklist\/detail\/(\d+)\/(\d+)/)) && (t = "https://" + a + "m.qidian.com/booklist/detail/" + i[1] + "/"),
+                (i = e.match(/\/chapter/)) && (t = o + "chapter///"),
+                (i = e.match(/\/lastpage\/(\d+)/)) && (t = o + "lastpage/" + i[1] + "/"),
+                (i = e.match(/\/gm/)) && (t = "https://" + a + "m.qidian.com" + location.pathname),
+                (i = e.match(/\/ask/)) && (t = "https://" + a + "m.qidian.com" + location.pathname),
+                (i = e.match(/\/qyn/)) && (t = "https://" + a + "m.qidian.com" + location.pathname),
+                (i = e.match(/\/role/)) && (t = "https://" + a + "m.qidian.com" + location.pathname),
+                t
+            }
+        </script>
+        <meta charset="UTF-8">
+        <title>三江推荐小说作品_往期起点三江推荐小说-起点中文网</title>
+        <meta name="description" content="起点中文网往期三江小说频道，为您聚合往期起点三江推荐过的好看小说，包含玄幻小说、武侠小说、原创小说、网游小说、都市小说、言情小说、青春小说、科幻小说，更多往期三江推荐小说尽在起点中文网。">
+        <meta name="keywords" content="三江,起点三江">
+        <meta name="robots" content="all">
+        <meta name="googlebot" content="all">
+        <meta name="baiduspider" content="all">
+        <meta http-equiv="mobile-agent" content="format=wml; url=https://m.qidian.com">
+        <meta http-equiv="mobile-agent" content="format=xhtml; url=https://m.qidian.com">
+        <meta http-equiv="mobile-agent" content="format=html5; url=http://m.qidian.com">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <meta name="renderer" content="webkit"/>
+        <meta name="mobile-agent" content="format=html5;url=https://m.qidian.com/sanjiang/">
+        <link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.qidian.com/sanjiang/">
+        <script>
+            function setCookie(e, o, n, t, i) {
+                i && (i = new Date(+new Date + i));
+                var a = e + "=" + escape(o) + (i ? "; expires=" + i.toGMTString() : "") + (t ? "; path=" + t : "") + (n ? "; domain=" + n : "");
+                a.length < 4096 && (document.cookie = a)
+            }
+            function getCookie(e) {
+                var o, n = new RegExp("(^| )" + e + "=([^;]*)(;|$)");
+                return (o = document.cookie.match(n)) ? o[2] : null
+            }
+            function createSender(e) {
+                var o = new Image;
+                o.onload = o.onerror = function() {
+                    o = null
+                }
+                ,
+                o.src = e
+            }
+            1 == getCookie("tf") && setCookie("tf", 1, "qidian.com", "/", 0)
+        </script>
+        <link data-ignore="true" rel="shortcut icon" type="image/x-icon" href="//qdfepccdn.qidian.com/www.qidian.com/favicon/qd_icon.ico">
+        <link data-ignore="true" rel="Bookmark" type="image/x-icon" href="//qdfepccdn.qidian.com/www.qidian.com/favicon/qd_icon.ico">
+        <meta name="servertime" content="1762325784"/>
+        <script src="https://aegis.cdn-go.cn/aegis-sdk-v2/2.5.34/aegis.min.js"></script>
+        <script>
+            var guidRes = document.cookie.match("(^|;) ?ywguid=([^;]*)(;|$)")
+              , guid = guidRes ? guidRes[2] : "";
+            window.AegisV2 = new Aegis({
+                id: "SDK-890d73ca465d5d0f3a8f",
+                hostUrl: {
+                    url: "https://galileotelemetry.tencent.com/collect"
+                },
+                uid: guid,
+                plugin: {
+                    pv: !0,
+                    aid: !0,
+                    error: !0,
+                    device: !1,
+                    close: !0,
+                    pagePerformance: !0,
+                    webVitals: !0,
+                    fId: !1,
+                    spa: !1,
+                    apiSpeed: !0,
+                    assetSpeed: !0,
+                    session: !0,
+                    api: {
+                        injectTraceHeader: "traceparent",
+                        injectTraceUrls: [/qidian.com\/ajax/]
+                    }
+                }
+            })
+        </script>
+        <script src="https://imgservices-1252317822.image.myqcloud.com/coco/s09222022/4f2a5dd7.p6bvj2.js"></script>
+        <script></script>
+        <script>
+            var _hmt = _hmt || [];
+            !function() {
+                var e = document.createElement("script");
+                window.location.hostname;
+                e.src = "https://hm.baidu.com/hm.js?f00f67093ce2f38f215010b699629083",
+                e.async = 1;
+                var t = document.getElementsByTagName("script")[0];
+                t.parentNode.insertBefore(e, t)
+            }()
+        </script>
+        <script data-ignore="true" src="//qdfepccdn.qidian.com/www.qidian.com/fock/116594983210.js"></script>
+        <script data-ignore="true" src="//qdfepccdn.qidian.com/www.qidian.com/fock/l0ir4.js"></script>
+        <script data-ignore="true" src="//qdfepccdn.qidian.com/www.qidian.com/fock/e1669345466848.js"></script>
+        <script defer="defer" src="//qdfepccdn.qidian.com/www.qidian.com/js/manifest.94c5d.bundle.js" crossorigin="anonymous"></script>
+        <script defer="defer" src="//qdfepccdn.qidian.com/www.qidian.com/js/vendors.adbe3.bundle.js" crossorigin="anonymous"></script>
+        <script defer="defer" src="//qdfepccdn.qidian.com/www.qidian.com/js/views/www.qidian.com/book/sanjiang.0374e.bundle.js" crossorigin="anonymous"></script>
+        <link href="//qdfepccdn.qidian.com/www.qidian.com/css/views/www.qidian.com/book/sanjiang.acd34a0e.css" rel="stylesheet" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="wrap">
+            <div id="pin-nav" class="pin-nav-wrap need-search" data-l1="40">
+                <div class="box-center cf">
+                    <div class="nav-list site-nav fl">
+                        <ul>
+                            <li class="site">
+                                <a class="pin-logo" href="//www.qidian.com/" data-eid="qd_A43">
+                                    <span class="third-remove"></span>
+                                </a>
+                                <div class="dropdown third-remove">
+                                    <a href="//www.qdmm.com/" target="_blank" data-eid="qd_A44">起点女生网</a>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" target="_blank" data-eid="qd_A47">玄幻</a>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" target="_blank" data-eid="qd_A48">都市</a>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" target="_blank" data-eid="qd_A49">仙侠</a>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/kehuan/" target="_blank" data-eid="qd_A50">科幻</a>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/zhutianwuxian/" target="_blank" data-eid="qd_A50">诸天无限</a>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/youxi/" target="_blank" data-eid="qd_A56">游戏</a>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" target="_blank" data-eid="qd_A52">历史</a>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/rank/" target="_blank" data-eid="qd_A53">排行</a>
+                            </li>
+                            <li class="more">
+                                <a href="javascript:" id="top-nav-more" target="_blank" data-eid="qd_A54">
+                                    更多<span></span>
+                                </a>
+                                <div class="dropdown">
+                                    <a href="//www.qidian.com/all/" target="_blank" data-eid="qd_A169">全部作品</a>
+                                    <a href="//www.qidian.com/2cy/" target="_blank" data-eid="qd_A55">轻小说</a>
+                                    <a href="//www.qidian.com/qihuan/" target="_blank" data-eid="qd_A51">奇幻</a>
+                                    <a href="//www.qidian.com/wuxia/" target="_blank" data-eid="qd_A57">武侠</a>
+                                    <a href="//www.qidian.com/lingyi/" target="_blank" data-eid="qd_A58">悬疑</a>
+                                    <a href="//www.qidian.com/junshi/" target="_blank" data-eid="qd_A59">军事</a>
+                                    <a href="//www.qidian.com/xianshi/" target="_blank" data-eid="qd_A60">现实</a>
+                                    <a href="//www.qidian.com/tiyu/" target="_blank" data-eid="qd_A61">体育</a>
+                                    <a href="//www.qidian.com/duanpian/" target="_blank" data-eid="qd_A196">短篇</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nav-list min-user fr">
+                        <ul>
+                            <li id="min-search">
+                                <form id="navFormUrl" action="//www.qidian.com/so/">
+                                    <a onclick="return!1" href="//www.qidian.com/soushu/">
+                                        <label id="pin-search">
+                                            <em class="iconfont">&#xe60d;</em>
+                                        </label>
+                                    </a>
+                                    <input id="pin-input" class="pin-input hide" name="kw" placeholder="">
+                                    <input class="submit-input" type="submit" id="topSearchSubmit">
+                                </form>
+                            </li>
+                            <li class="line"></li>
+                            <li class="sign-out" id="fixed-login-box">
+                                <a id="pin-login" href="javascript:" data-eid="qd_A64">登录</a>
+                                <a class="reg" id="fixed-reg" href="//passport.qidian.com/reg.html?appid=10&areaid=1&target=iframe&ticket=1&auto=1&autotime=30&returnUrl=https%3A%2F%2Fwww.qidian.com" target="_blank">注册</a>
+                            </li>
+                            <li class="sign-in hidden">
+                                <a href="//my.qidian.com/" target="_blank" data-eid="qd_A65">
+                                    <i id="nav-user-name"></i>
+                                    <span></span>
+                                </a>
+                                <div class="dropdown">
+                                    <a href="//my.qidian.com/message/sys/" target="_blank" data-eid="qd_A66">
+                                        消息(<i id="top-msg">0</i>
+                                        )
+                                    </a>
+                                    <a class="qqlivepay" href="//www.qidian.com/charge/meRedirect" target="_blank" data-eid="qd_A67">充值</a>
+                                    <a href="//my.qidian.com/" target="_blank" data-eid="qd_A68">个人中心</a>
+                                    <a href="//www.qidian.com/help" target="_blank" data-eid="qd_A69">帮助与客服</a>
+                                    <a id="exit" href="javascript:" data-eid="qd_A70">退出</a>
+                                </div>
+                            </li>
+                            <li class="line"></li>
+                            <li class="book-shelf" id="top-book-shelf">
+                                <a href="//my.qidian.com/bookcase/" target="_blank" data-eid="qd_A63">
+                                    <em class="iconfont">&#xe60c;</em>
+                                    <i>我的书架</i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <script>
+                document.getElementById("navFormUrl").onsubmit = function(e) {
+                    e.preventDefault();
+                    var n = document.getElementById("pin-input").value || document.getElementById("pin-input").placeholder;
+                    window.open(document.getElementById("navFormUrl").action + n + ".html")
+                }
+                ,
+                document.getElementById("pin-search").onclick = function() {
+                    var e = document.getElementById("pin-input").value || document.getElementById("pin-input").placeholder
+                      , n = document.getElementById("navFormUrl").action + (e ? e + ".html" : "");
+                    window.open(n)
+                }
+            </script>
+            <div style="display:none">
+                <span>
+                    <a href="//www.qidian.com/">首页</a>
+                    <em class="iconfont">&#xe621;</em>
+                    <h1>往期三江</h1>
+                </span>
+            </div>
+            <div class="strongrec-title box-center cf">
+                <p class="title-links">
+                    <a class="lang" href="/coverrec/">往期封推</a>
+                    <span class="separator">|</span>
+                    <a class="lang" href="/strongrec/">往期强推</a>
+                    <span class="separator">|</span>
+                    <a class="lang act" href="/sanjiang/">往期三江</a>
+                </p>
+            </div>
+            <ul class="strongrec-wrap box-center cf" data-l1="1">
+                <li class="strongrec-list book-list-wrap">
+                    <h3 class="date-range-title">
+                        <span class="date-from">2025.10.26</span>
+                        -<span class="date-to">2025.11.02</span>
+                    </h3>
+                    <div class="book-list">
+                        <ul>
+                            <li>
+                                <a href="//www.qidian.com/qihuan/" class="channel" data-eid="qd_A175" target="_blank" title="奇幻类小说大全">
+                                    <em>「</em>
+                                    奇幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046414307/" class="name" title="冰汽神座在线阅读" data-eid="qd_A176" data-bid="1046414307" target="_blank">冰汽神座</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="冰汽" target="_blank">冰汽</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046343979/" class="name" title="本座王重一在线阅读" data-eid="qd_A176" data-bid="1046343979" target="_blank">本座王重一</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="爽文" target="_blank">爽文</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/youxi/" class="channel" data-eid="qd_A175" target="_blank" title="游戏类小说大全">
+                                    <em>「</em>
+                                    游戏<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046272489/" class="name" title="玩转电竞圈在线阅读" data-eid="qd_A176" data-bid="1046272489" target="_blank">玩转电竞圈</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="电竞" target="_blank">电竞</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046506147/" class="name" title="蜀山玄阴教主在线阅读" data-eid="qd_A176" data-bid="1046506147" target="_blank">蜀山玄阴教主</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="蜀山" target="_blank">蜀山</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045796047/" class="name" title="娱乐圈的老实人在线阅读" data-eid="qd_A176" data-bid="1045796047" target="_blank">娱乐圈的老实人</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="华娱" target="_blank">华娱</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/qihuan/" class="channel" data-eid="qd_A175" target="_blank" title="奇幻类小说大全">
+                                    <em>「</em>
+                                    奇幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1040840487/" class="name" title="我们法师是这样的在线阅读" data-eid="qd_A176" data-bid="1040840487" target="_blank">我们法师是这样的</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="法师" target="_blank">法师</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046417125/" class="name" title="杀死那个史蒂夫！在线阅读" data-eid="qd_A176" data-bid="1046417125" target="_blank">杀死那个史蒂夫！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="MC" target="_blank">MC</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/zhutianwuxian/" class="channel" data-eid="qd_A175" target="_blank" title="诸天无限类小说大全">
+                                    <em>「</em>
+                                    诸天无限<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046461012/" class="name" title="这里的猴子太多了！在线阅读" data-eid="qd_A176" data-bid="1046461012" target="_blank">这里的猴子太多了！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="西游" target="_blank">西游</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045721112/" class="name" title="从拳愿暴打海贼王开始在线阅读" data-eid="qd_A176" data-bid="1045721112" target="_blank">从拳愿暴打海贼王开始</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="综漫" target="_blank">综漫</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046339063/" class="name" title="无限再生的我，交易诸天在线阅读" data-eid="qd_A176" data-bid="1046339063" target="_blank">无限再生的我，交易诸天</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="高武" target="_blank">高武</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046316319/" class="name" title="吃瓜千年，我成了路人真仙在线阅读" data-eid="qd_A176" data-bid="1046316319" target="_blank">吃瓜千年，我成了路人真仙</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="路人" target="_blank">路人</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046406999/" class="name" title="华娱1997：公知粉碎机在线阅读" data-eid="qd_A176" data-bid="1046406999" target="_blank">华娱1997：公知粉碎机</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="都市" target="_blank">都市</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lingyi/" class="channel" data-eid="qd_A175" target="_blank" title="悬疑类小说大全">
+                                    <em>「</em>
+                                    悬疑<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046382786/" class="name" title="毫无存在感的我混在惊悚游戏在线阅读" data-eid="qd_A176" data-bid="1046382786" target="_blank">毫无存在感的我混在惊悚游戏</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="透明人" target="_blank">透明人</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046478126/" class="name" title="重生1878：美利坚头号悍匪在线阅读" data-eid="qd_A176" data-bid="1046478126" target="_blank">重生1878：美利坚头号悍匪</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="美利坚" target="_blank">美利坚</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046451896/" class="name" title="大哥别卷了，你都卷成汉中祖了在线阅读" data-eid="qd_A176" data-bid="1046451896" target="_blank">大哥别卷了，你都卷成汉中祖了</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="三国" target="_blank">三国</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/youxi/" class="channel" data-eid="qd_A175" target="_blank" title="游戏类小说大全">
+                                    <em>「</em>
+                                    游戏<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046347995/" class="name" title="系统出错后，我成了LPL救世主在线阅读" data-eid="qd_A176" data-bid="1046347995" target="_blank">系统出错后，我成了LPL救世主</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="LOL" target="_blank">LOL</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/youxi/" class="channel" data-eid="qd_A175" target="_blank" title="游戏类小说大全">
+                                    <em>「</em>
+                                    游戏<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046368677/" class="name" title="综网：从速刷打灰开始的战斗天选在线阅读" data-eid="qd_A176" data-bid="1046368677" target="_blank">综网：从速刷打灰开始的战斗天选</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="综网" target="_blank">综网</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="strongrec-list book-list-wrap">
+                    <h3 class="date-range-title">
+                        <span class="date-from">2025.10.19</span>
+                        -<span class="date-to">2025.10.26</span>
+                    </h3>
+                    <div class="book-list">
+                        <ul>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046310214/" class="name" title="仙朝鹰犬在线阅读" data-eid="qd_A176" data-bid="1046310214" target="_blank">仙朝鹰犬</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="仙朝" target="_blank">仙朝</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/kehuan/" class="channel" data-eid="qd_A175" target="_blank" title="科幻类小说大全">
+                                    <em>「</em>
+                                    科幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046342742/" class="name" title="文明乐园在线阅读" data-eid="qd_A176" data-bid="1046342742" target="_blank">文明乐园</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="科幻" target="_blank">科幻</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046292344/" class="name" title="本官娘子就是妖在线阅读" data-eid="qd_A176" data-bid="1046292344" target="_blank">本官娘子就是妖</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="许仙" target="_blank">许仙</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046347037/" class="name" title="1979戏梦人生在线阅读" data-eid="qd_A176" data-bid="1046347037" target="_blank">1979戏梦人生</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="文娱" target="_blank">文娱</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/youxi/" class="channel" data-eid="qd_A175" target="_blank" title="游戏类小说大全">
+                                    <em>「</em>
+                                    游戏<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046373112/" class="name" title="登神：从双职业开始在线阅读" data-eid="qd_A176" data-bid="1046373112" target="_blank">登神：从双职业开始</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="琥珀流" target="_blank">琥珀流</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045907576/" class="name" title="大乾暴君：谛听天下在线阅读" data-eid="qd_A176" data-bid="1045907576" target="_blank">大乾暴君：谛听天下</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="谛听" target="_blank">谛听</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046343620/" class="name" title="从高校学霸到科研大能在线阅读" data-eid="qd_A176" data-bid="1046343620" target="_blank">从高校学霸到科研大能</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="学霸" target="_blank">学霸</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046275644/" class="name" title="霍格沃茨：中国式教授在线阅读" data-eid="qd_A176" data-bid="1046275644" target="_blank">霍格沃茨：中国式教授</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="黑魔法" target="_blank">黑魔法</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/qihuan/" class="channel" data-eid="qd_A175" target="_blank" title="奇幻类小说大全">
+                                    <em>「</em>
+                                    奇幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046324520/" class="name" title="我的技能栏里全是怪物招在线阅读" data-eid="qd_A176" data-bid="1046324520" target="_blank">我的技能栏里全是怪物招</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="奇幻" target="_blank">奇幻</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046428052/" class="name" title="日本战国：真田家的野望在线阅读" data-eid="qd_A176" data-bid="1046428052" target="_blank">日本战国：真田家的野望</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="野望" target="_blank">野望</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046367278/" class="name" title="大明：我在洪武放映纪录片在线阅读" data-eid="qd_A176" data-bid="1046367278" target="_blank">大明：我在洪武放映纪录片</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="大明" target="_blank">大明</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/zhutianwuxian/" class="channel" data-eid="qd_A175" target="_blank" title="诸天无限类小说大全">
+                                    <em>「</em>
+                                    诸天无限<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046261802/" class="name" title="我名黄天，苍天已死什么鬼？在线阅读" data-eid="qd_A176" data-bid="1046261802" target="_blank">我名黄天，苍天已死什么鬼？</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="诸天无限" target="_blank">诸天无限</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046309178/" class="name" title="贞观悍师：从教太子逆袭开始在线阅读" data-eid="qd_A176" data-bid="1046309178" target="_blank">贞观悍师：从教太子逆袭开始</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="大唐" target="_blank">大唐</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046369863/" class="name" title="1978：从参军开始的文豪在线阅读" data-eid="qd_A176" data-bid="1046369863" target="_blank">1978：从参军开始的文豪</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="文豪" target="_blank">文豪</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046250642/" class="name" title="美利坚厨神，从荒野独居开始在线阅读" data-eid="qd_A176" data-bid="1046250642" target="_blank">美利坚厨神，从荒野独居开始</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="荒野" target="_blank">荒野</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/zhutianwuxian/" class="channel" data-eid="qd_A175" target="_blank" title="诸天无限类小说大全">
+                                    <em>「</em>
+                                    诸天无限<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046334296/" class="name" title="诸天从神雕娶妻赤练仙子开始在线阅读" data-eid="qd_A176" data-bid="1046334296" target="_blank">诸天从神雕娶妻赤练仙子开始</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="神雕" target="_blank">神雕</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046149973/" class="name" title="我都成大只佬了，你们才降临！！在线阅读" data-eid="qd_A176" data-bid="1046149973" target="_blank">我都成大只佬了，你们才降临！！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="抽象" target="_blank">抽象</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="strongrec-list book-list-wrap">
+                    <h3 class="date-range-title">
+                        <span class="date-from">2025.10.12</span>
+                        -<span class="date-to">2025.10.19</span>
+                    </h3>
+                    <div class="book-list">
+                        <ul>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046237903/" class="name" title="狂徒！在线阅读" data-eid="qd_A176" data-bid="1046237903" target="_blank">狂徒！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="杀杀杀" target="_blank">杀杀杀</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045735277/" class="name" title="降龙在线阅读" data-eid="qd_A176" data-bid="1045735277" target="_blank">降龙</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="仙侠" target="_blank">仙侠</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/tiyu/" class="channel" data-eid="qd_A175" target="_blank" title="体育类小说大全">
+                                    <em>「</em>
+                                    体育<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046336776/" class="name" title="唯冠在线阅读" data-eid="qd_A176" data-bid="1046336776" target="_blank">唯冠</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="篮球" target="_blank">篮球</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046260880/" class="name" title="诸天领主在线阅读" data-eid="qd_A176" data-bid="1046260880" target="_blank">诸天领主</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="种田" target="_blank">种田</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045903796/" class="name" title="成龙快婿在线阅读" data-eid="qd_A176" data-bid="1045903796" target="_blank">成龙快婿</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="历史" target="_blank">历史</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046366564/" class="name" title="山神在此在线阅读" data-eid="qd_A176" data-bid="1046366564" target="_blank">山神在此</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="山神" target="_blank">山神</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/tiyu/" class="channel" data-eid="qd_A175" target="_blank" title="体育类小说大全">
+                                    <em>「</em>
+                                    体育<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046200946/" class="name" title="篮球终点站在线阅读" data-eid="qd_A176" data-bid="1046200946" target="_blank">篮球终点站</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="NBA" target="_blank">NBA</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046179008/" class="name" title="西游：拦路人！在线阅读" data-eid="qd_A176" data-bid="1046179008" target="_blank">西游：拦路人！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="西游" target="_blank">西游</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046266250/" class="name" title="我有一面全知镜在线阅读" data-eid="qd_A176" data-bid="1046266250" target="_blank">我有一面全知镜</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="高武" target="_blank">高武</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/kehuan/" class="channel" data-eid="qd_A175" target="_blank" title="科幻类小说大全">
+                                    <em>「</em>
+                                    科幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046062921/" class="name" title="我们小区又穿越了在线阅读" data-eid="qd_A176" data-bid="1046062921" target="_blank">我们小区又穿越了</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="群穿" target="_blank">群穿</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046194994/" class="name" title="同时穿越：继承万界遗产在线阅读" data-eid="qd_A176" data-bid="1046194994" target="_blank">同时穿越：继承万界遗产</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="同穿" target="_blank">同穿</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046034089/" class="name" title="长生修魔：从折纸人开始在线阅读" data-eid="qd_A176" data-bid="1046034089" target="_blank">长生修魔：从折纸人开始</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="长生" target="_blank">长生</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046225609/" class="name" title="楚汉争霸，你再造大秦？在线阅读" data-eid="qd_A176" data-bid="1046225609" target="_blank">楚汉争霸，你再造大秦？</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="大秦" target="_blank">大秦</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046215023/" class="name" title="满门尽灭的宇智波没有格局在线阅读" data-eid="qd_A176" data-bid="1046215023" target="_blank">满门尽灭的宇智波没有格局</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="木叶" target="_blank">木叶</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046077135/" class="name" title="见过发光料理吗，你就画美食番？在线阅读" data-eid="qd_A176" data-bid="1046077135" target="_blank">见过发光料理吗，你就画美食番？</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="美食" target="_blank">美食</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046176486/" class="name" title="季汉帝师，从教刘备反夺兖州开始在线阅读" data-eid="qd_A176" data-bid="1046176486" target="_blank">季汉帝师，从教刘备反夺兖州开始</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="三国" target="_blank">三国</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046171436/" class="name" title="1984小海岛，从获得情报开始在线阅读" data-eid="qd_A176" data-bid="1046171436" target="_blank">1984小海岛，从获得情报开始</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="赶海" target="_blank">赶海</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="strongrec-list book-list-wrap">
+                    <h3 class="date-range-title">
+                        <span class="date-from">2025.10.05</span>
+                        -<span class="date-to">2025.10.12</span>
+                    </h3>
+                    <div class="book-list">
+                        <ul>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045076310/" class="name" title="绝对之门在线阅读" data-eid="qd_A176" data-bid="1045076310" target="_blank">绝对之门</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="收容" target="_blank">收容</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046172167/" class="name" title="狩神纪元在线阅读" data-eid="qd_A176" data-bid="1046172167" target="_blank">狩神纪元</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="高武" target="_blank">高武</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046117934/" class="name" title="大明黑帆在线阅读" data-eid="qd_A176" data-bid="1046117934" target="_blank">大明黑帆</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="航海" target="_blank">航海</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045928363/" class="name" title="天理协议在线阅读" data-eid="qd_A176" data-bid="1045928363" target="_blank">天理协议</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="超能力" target="_blank">超能力</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/zhutianwuxian/" class="channel" data-eid="qd_A175" target="_blank" title="诸天无限类小说大全">
+                                    <em>「</em>
+                                    诸天无限<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045112480/" class="name" title="幻想入侵现实在线阅读" data-eid="qd_A176" data-bid="1045112480" target="_blank">幻想入侵现实</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="异世" target="_blank">异世</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045147073/" class="name" title="从仙吏稳成大天尊在线阅读" data-eid="qd_A176" data-bid="1045147073" target="_blank">从仙吏稳成大天尊</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="天才流" target="_blank">天才流</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/zhutianwuxian/" class="channel" data-eid="qd_A175" target="_blank" title="诸天无限类小说大全">
+                                    <em>「</em>
+                                    诸天无限<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046062776/" class="name" title="人在遮天，投影万界在线阅读" data-eid="qd_A176" data-bid="1046062776" target="_blank">人在遮天，投影万界</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="投影万界" target="_blank">投影万界</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046177903/" class="name" title="今天毁灭大宋了吗？在线阅读" data-eid="qd_A176" data-bid="1046177903" target="_blank">今天毁灭大宋了吗？</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="大宋" target="_blank">大宋</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/tiyu/" class="channel" data-eid="qd_A175" target="_blank" title="体育类小说大全">
+                                    <em>「</em>
+                                    体育<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046310553/" class="name" title="球神从被动技能开始在线阅读" data-eid="qd_A176" data-bid="1046310553" target="_blank">球神从被动技能开始</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="足球" target="_blank">足球</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046056624/" class="name" title="修仙界只有妖女了是吗在线阅读" data-eid="qd_A176" data-bid="1046056624" target="_blank">修仙界只有妖女了是吗</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="修罗场" target="_blank">修罗场</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046088843/" class="name" title="贷款，然后变成魔法少女在线阅读" data-eid="qd_A176" data-bid="1046088843" target="_blank">贷款，然后变成魔法少女</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="魔法" target="_blank">魔法</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046125184/" class="name" title="全职猎人：从日之呼吸开始在线阅读" data-eid="qd_A176" data-bid="1046125184" target="_blank">全职猎人：从日之呼吸开始</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="全职猎人" target="_blank">全职猎人</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046065016/" class="name" title="我师妹怎么看谁都像邪修？在线阅读" data-eid="qd_A176" data-bid="1046065016" target="_blank">我师妹怎么看谁都像邪修？</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="邪修！" target="_blank">邪修！</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/qihuan/" class="channel" data-eid="qd_A175" target="_blank" title="奇幻类小说大全">
+                                    <em>「</em>
+                                    奇幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046069473/" class="name" title="主人说抽到的词条不能浪费在线阅读" data-eid="qd_A176" data-bid="1046069473" target="_blank">主人说抽到的词条不能浪费</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="搞笑" target="_blank">搞笑</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/kehuan/" class="channel" data-eid="qd_A175" target="_blank" title="科幻类小说大全">
+                                    <em>「</em>
+                                    科幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046106134/" class="name" title="重生末日前：我的后盾是国家在线阅读" data-eid="qd_A176" data-bid="1046106134" target="_blank">重生末日前：我的后盾是国家</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="硬科幻" target="_blank">硬科幻</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046197633/" class="name" title="印度1991，从娶富婆开始在线阅读" data-eid="qd_A176" data-bid="1046197633" target="_blank">印度1991，从娶富婆开始</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="印度" target="_blank">印度</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/youxi/" class="channel" data-eid="qd_A175" target="_blank" title="游戏类小说大全">
+                                    <em>「</em>
+                                    游戏<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046133147/" class="name" title="CS：最后一舞，舞成职业通天代在线阅读" data-eid="qd_A176" data-bid="1046133147" target="_blank">CS：最后一舞，舞成职业通天代</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="CS" target="_blank">CS</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="strongrec-list book-list-wrap">
+                    <h3 class="date-range-title">
+                        <span class="date-from">2025.09.28</span>
+                        -<span class="date-to">2025.10.05</span>
+                    </h3>
+                    <div class="book-list">
+                        <ul>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046002803/" class="name" title="国师在线阅读" data-eid="qd_A176" data-bid="1046002803" target="_blank">国师</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="朝堂" target="_blank">朝堂</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046012796/" class="name" title="方仙外道在线阅读" data-eid="qd_A176" data-bid="1046012796" target="_blank">方仙外道</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="古典仙侠" target="_blank">古典仙侠</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/qihuan/" class="channel" data-eid="qd_A175" target="_blank" title="奇幻类小说大全">
+                                    <em>「</em>
+                                    奇幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1041632376/" class="name" title="绝夜之旅在线阅读" data-eid="qd_A176" data-bid="1041632376" target="_blank">绝夜之旅</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="无昼之后" target="_blank">无昼之后</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046079214/" class="name" title="太太请安分在线阅读" data-eid="qd_A176" data-bid="1046079214" target="_blank">太太请安分</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="爆款" target="_blank">爆款</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/tiyu/" class="channel" data-eid="qd_A175" target="_blank" title="体育类小说大全">
+                                    <em>「</em>
+                                    体育<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046167790/" class="name" title="喧嚣未及之处在线阅读" data-eid="qd_A176" data-bid="1046167790" target="_blank">喧嚣未及之处</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="篮球" target="_blank">篮球</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/zhutianwuxian/" class="channel" data-eid="qd_A175" target="_blank" title="诸天无限类小说大全">
+                                    <em>「</em>
+                                    诸天无限<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046176794/" class="name" title="无限天神君临在线阅读" data-eid="qd_A176" data-bid="1046176794" target="_blank">无限天神君临</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="元祖无限" target="_blank">元祖无限</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045994148/" class="name" title="彼可取而代之在线阅读" data-eid="qd_A176" data-bid="1045994148" target="_blank">彼可取而代之</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="三国" target="_blank">三国</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046089305/" class="name" title="我的职业太有个性在线阅读" data-eid="qd_A176" data-bid="1046089305" target="_blank">我的职业太有个性</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="爽文" target="_blank">爽文</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046006578/" class="name" title="少女，你来组成头部在线阅读" data-eid="qd_A176" data-bid="1046006578" target="_blank">少女，你来组成头部</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="变身骑士" target="_blank">变身骑士</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/youxi/" class="channel" data-eid="qd_A175" target="_blank" title="游戏类小说大全">
+                                    <em>「</em>
+                                    游戏<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046169619/" class="name" title="神仙道果，卡牌助我在线阅读" data-eid="qd_A176" data-bid="1046169619" target="_blank">神仙道果，卡牌助我</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="卡牌" target="_blank">卡牌</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045994130/" class="name" title="白蛇：从截胡许仙开始在线阅读" data-eid="qd_A176" data-bid="1045994130" target="_blank">白蛇：从截胡许仙开始</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="白蛇传" target="_blank">白蛇传</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045635629/" class="name" title="文娱：艺术就是煤老板！在线阅读" data-eid="qd_A176" data-bid="1045635629" target="_blank">文娱：艺术就是煤老板！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="爽文" target="_blank">爽文</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/qihuan/" class="channel" data-eid="qd_A175" target="_blank" title="奇幻类小说大全">
+                                    <em>「</em>
+                                    奇幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046000930/" class="name" title="幽魂骑士王的地下城工程在线阅读" data-eid="qd_A176" data-bid="1046000930" target="_blank">幽魂骑士王的地下城工程</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="地下城" target="_blank">地下城</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046053539/" class="name" title="三国：从樵夫到季汉上将在线阅读" data-eid="qd_A176" data-bid="1046053539" target="_blank">三国：从樵夫到季汉上将</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="三国" target="_blank">三国</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/junshi/" class="channel" data-eid="qd_A175" target="_blank" title="军事类小说大全">
+                                    <em>「</em>
+                                    军事<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046027887/" class="name" title="谍战1937：我的外挂是手机在线阅读" data-eid="qd_A176" data-bid="1046027887" target="_blank">谍战1937：我的外挂是手机</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="谍战" target="_blank">谍战</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1042329726/" class="name" title="从超女开始调教华娱在线阅读" data-eid="qd_A176" data-bid="1042329726" target="_blank">从超女开始调教华娱</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="华娱" target="_blank">华娱</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046103006/" class="name" title="一人：演过戏吗？你就神格面具！在线阅读" data-eid="qd_A176" data-bid="1046103006" target="_blank">一人：演过戏吗？你就神格面具！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="一人之下" target="_blank">一人之下</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="strongrec-list book-list-wrap">
+                    <h3 class="date-range-title">
+                        <span class="date-from">2025.09.21</span>
+                        -<span class="date-to">2025.09.28</span>
+                    </h3>
+                    <div class="book-list">
+                        <ul>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046048048/" class="name" title="五代风华在线阅读" data-eid="qd_A176" data-bid="1046048048" target="_blank">五代风华</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="五代" target="_blank">五代</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045911271/" class="name" title="草芥称王在线阅读" data-eid="qd_A176" data-bid="1045911271" target="_blank">草芥称王</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="争霸" target="_blank">争霸</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045913359/" class="name" title="日不落天唐在线阅读" data-eid="qd_A176" data-bid="1045913359" target="_blank">日不落天唐</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="大唐" target="_blank">大唐</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/tiyu/" class="channel" data-eid="qd_A175" target="_blank" title="体育类小说大全">
+                                    <em>「</em>
+                                    体育<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045763076/" class="name" title="非典型八号位在线阅读" data-eid="qd_A176" data-bid="1045763076" target="_blank">非典型八号位</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="足球" target="_blank">足球</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045961766/" class="name" title="我不是天才刑警在线阅读" data-eid="qd_A176" data-bid="1045961766" target="_blank">我不是天才刑警</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="警察文" target="_blank">警察文</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045999319/" class="name" title="我在北宋当妖道在线阅读" data-eid="qd_A176" data-bid="1045999319" target="_blank">我在北宋当妖道</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="宋朝" target="_blank">宋朝</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045499195/" class="name" title="这个师弟过于正义在线阅读" data-eid="qd_A176" data-bid="1045499195" target="_blank">这个师弟过于正义</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="人气" target="_blank">人气</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045960504/" class="name" title="霍格沃茨的学习面板在线阅读" data-eid="qd_A176" data-bid="1045960504" target="_blank">霍格沃茨的学习面板</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="霍格沃茨" target="_blank">霍格沃茨</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/qihuan/" class="channel" data-eid="qd_A175" target="_blank" title="奇幻类小说大全">
+                                    <em>「</em>
+                                    奇幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045939992/" class="name" title="生活不易，红龙卖艺？在线阅读" data-eid="qd_A176" data-bid="1045939992" target="_blank">生活不易，红龙卖艺？</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="魔法" target="_blank">魔法</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045929618/" class="name" title="从魔法少女开始独断万古在线阅读" data-eid="qd_A176" data-bid="1045929618" target="_blank">从魔法少女开始独断万古</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="修真	" target="_blank">修真	</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045979595/" class="name" title="我速通了仙子们的游戏！在线阅读" data-eid="qd_A176" data-bid="1045979595" target="_blank">我速通了仙子们的游戏！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="雪白" target="_blank">雪白</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045905122/" class="name" title="人已中年，这个医生才出道在线阅读" data-eid="qd_A176" data-bid="1045905122" target="_blank">人已中年，这个医生才出道</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="医生" target="_blank">医生</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045871218/" class="name" title="三国：坏了，我成汉末魅魔了在线阅读" data-eid="qd_A176" data-bid="1045871218" target="_blank">三国：坏了，我成汉末魅魔了</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="兄弟情" target="_blank">兄弟情</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046086858/" class="name" title="华娱：从96年加入正规军开始在线阅读" data-eid="qd_A176" data-bid="1046086858" target="_blank">华娱：从96年加入正规军开始</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="华娱" target="_blank">华娱</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046070081/" class="name" title="总华探长死了，我是港警一哥！在线阅读" data-eid="qd_A176" data-bid="1046070081" target="_blank">总华探长死了，我是港警一哥！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="港岛" target="_blank">港岛</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045902931/" class="name" title="斗罗：掌控能量的我有惊世智慧！在线阅读" data-eid="qd_A176" data-bid="1045902931" target="_blank">斗罗：掌控能量的我有惊世智慧！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="乐子" target="_blank">乐子</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045727750/" class="name" title="人在大二，男神养成系统是什么鬼在线阅读" data-eid="qd_A176" data-bid="1045727750" target="_blank">人在大二，男神养成系统是什么鬼</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="男神养成" target="_blank">男神养成</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="strongrec-list book-list-wrap">
+                    <h3 class="date-range-title">
+                        <span class="date-from">2025.09.14</span>
+                        -<span class="date-to">2025.09.21</span>
+                    </h3>
+                    <div class="book-list">
+                        <ul>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1046000272/" class="name" title="元始金章在线阅读" data-eid="qd_A176" data-bid="1046000272" target="_blank">元始金章</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="成仙" target="_blank">成仙</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045811295/" class="name" title="请同学斩妖在线阅读" data-eid="qd_A176" data-bid="1045811295" target="_blank">请同学斩妖</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="斩妖" target="_blank">斩妖</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045897250/" class="name" title="尸怪修行笔记在线阅读" data-eid="qd_A176" data-bid="1045897250" target="_blank">尸怪修行笔记</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="古典" target="_blank">古典</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045904862/" class="name" title="没钱还怎么当崇祯在线阅读" data-eid="qd_A176" data-bid="1045904862" target="_blank">没钱还怎么当崇祯</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="大明" target="_blank">大明</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/kehuan/" class="channel" data-eid="qd_A175" target="_blank" title="科幻类小说大全">
+                                    <em>「</em>
+                                    科幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045805062/" class="name" title="堑壕大栓与魔法在线阅读" data-eid="qd_A176" data-bid="1045805062" target="_blank">堑壕大栓与魔法</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="一战" target="_blank">一战</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045891517/" class="name" title="我在二战当文豪在线阅读" data-eid="qd_A176" data-bid="1045891517" target="_blank">我在二战当文豪</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="文豪" target="_blank">文豪</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045828925/" class="name" title="我在现世播撒贝黑莱特在线阅读" data-eid="qd_A176" data-bid="1045828925" target="_blank">我在现世播撒贝黑莱特</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="幕后流" target="_blank">幕后流</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045914182/" class="name" title="每天去梦里雇佣小怪物在线阅读" data-eid="qd_A176" data-bid="1045914182" target="_blank">每天去梦里雇佣小怪物</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="怪物" target="_blank">怪物</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/zhutianwuxian/" class="channel" data-eid="qd_A175" target="_blank" title="诸天无限类小说大全">
+                                    <em>「</em>
+                                    诸天无限<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1044792687/" class="name" title="港综：从我爱黄金开始在线阅读" data-eid="qd_A176" data-bid="1044792687" target="_blank">港综：从我爱黄金开始</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="港综" target="_blank">港综</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/zhutianwuxian/" class="channel" data-eid="qd_A175" target="_blank" title="诸天无限类小说大全">
+                                    <em>「</em>
+                                    诸天无限<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1044371632/" class="name" title="人在箱庭，是纯血龙种在线阅读" data-eid="qd_A176" data-bid="1044371632" target="_blank">人在箱庭，是纯血龙种</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="箱庭" target="_blank">箱庭</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/youxi/" class="channel" data-eid="qd_A175" target="_blank" title="游戏类小说大全">
+                                    <em>「</em>
+                                    游戏<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045757032/" class="name" title="坏了，被李相赫做局了！在线阅读" data-eid="qd_A176" data-bid="1045757032" target="_blank">坏了，被李相赫做局了！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="LOL" target="_blank">LOL</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045831749/" class="name" title="红楼芳华，权倾天下在线阅读" data-eid="qd_A176" data-bid="1045831749" target="_blank">红楼芳华，权倾天下</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="名著" target="_blank">名著</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045906714/" class="name" title="我在规则怪谈里无视规则在线阅读" data-eid="qd_A176" data-bid="1045906714" target="_blank">我在规则怪谈里无视规则</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="诡异" target="_blank">诡异</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/qihuan/" class="channel" data-eid="qd_A175" target="_blank" title="奇幻类小说大全">
+                                    <em>「</em>
+                                    奇幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045939688/" class="name" title="杀穿地下城的哥布林杀手在线阅读" data-eid="qd_A176" data-bid="1045939688" target="_blank">杀穿地下城的哥布林杀手</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="哥杀" target="_blank">哥杀</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/youxi/" class="channel" data-eid="qd_A175" target="_blank" title="游戏类小说大全">
+                                    <em>「</em>
+                                    游戏<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045923773/" class="name" title="信我，我真是联盟职业选手在线阅读" data-eid="qd_A176" data-bid="1045923773" target="_blank">信我，我真是联盟职业选手</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="LOL" target="_blank">LOL</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045818681/" class="name" title="洪荒：重生一气仙，稳健修行在线阅读" data-eid="qd_A176" data-bid="1045818681" target="_blank">洪荒：重生一气仙，稳健修行</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="穿越" target="_blank">穿越</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045856907/" class="name" title="洪荒财神：别让赵公明再斩尸了！在线阅读" data-eid="qd_A176" data-bid="1045856907" target="_blank">洪荒财神：别让赵公明再斩尸了！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="洪荒" target="_blank">洪荒</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="strongrec-list book-list-wrap">
+                    <h3 class="date-range-title">
+                        <span class="date-from">2025.09.07</span>
+                        -<span class="date-to">2025.09.14</span>
+                    </h3>
+                    <div class="book-list">
+                        <ul>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045071674/" class="name" title="锦衣无双在线阅读" data-eid="qd_A176" data-bid="1045071674" target="_blank">锦衣无双</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="王朝" target="_blank">王朝</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/tiyu/" class="channel" data-eid="qd_A175" target="_blank" title="体育类小说大全">
+                                    <em>「</em>
+                                    体育<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045776208/" class="name" title="大师补习班在线阅读" data-eid="qd_A176" data-bid="1045776208" target="_blank">大师补习班</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="足球" target="_blank">足球</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/zhutianwuxian/" class="channel" data-eid="qd_A175" target="_blank" title="诸天无限类小说大全">
+                                    <em>「</em>
+                                    诸天无限<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045750544/" class="name" title="港片情报王在线阅读" data-eid="qd_A176" data-bid="1045750544" target="_blank">港片情报王</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="港综" target="_blank">港综</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1035676337/" class="name" title="人间太岁神！在线阅读" data-eid="qd_A176" data-bid="1035676337" target="_blank">人间太岁神！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="无敌" target="_blank">无敌</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045364639/" class="name" title="从白犬开始修仙在线阅读" data-eid="qd_A176" data-bid="1045364639" target="_blank">从白犬开始修仙</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="仙侠" target="_blank">仙侠</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045770079/" class="name" title="我觉醒了修仙面板在线阅读" data-eid="qd_A176" data-bid="1045770079" target="_blank">我觉醒了修仙面板</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="唯我独法" target="_blank">唯我独法</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045819148/" class="name" title="我咋就天下无敌了在线阅读" data-eid="qd_A176" data-bid="1045819148" target="_blank">我咋就天下无敌了</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="唯我独法" target="_blank">唯我独法</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045740296/" class="name" title="华娱：我怎么成顶流了在线阅读" data-eid="qd_A176" data-bid="1045740296" target="_blank">华娱：我怎么成顶流了</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="华娱" target="_blank">华娱</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045762422/" class="name" title="从山寨老头乐，到工业霸主在线阅读" data-eid="qd_A176" data-bid="1045762422" target="_blank">从山寨老头乐，到工业霸主</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="重生" target="_blank">重生</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045751599/" class="name" title="火红年代：成为工业巨擘在线阅读" data-eid="qd_A176" data-bid="1045751599" target="_blank">火红年代：成为工业巨擘</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="工业" target="_blank">工业</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045849540/" class="name" title="从文明晋升考核开始装天才在线阅读" data-eid="qd_A176" data-bid="1045849540" target="_blank">从文明晋升考核开始装天才</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="文明" target="_blank">文明</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/zhutianwuxian/" class="channel" data-eid="qd_A175" target="_blank" title="诸天无限类小说大全">
+                                    <em>「</em>
+                                    诸天无限<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1044946146/" class="name" title="诸天大道宗在线阅读" data-eid="qd_A176" data-bid="1044946146" target="_blank">诸天大道宗</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="诸天" target="_blank">诸天</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045829425/" class="name" title="我都满级号了，你们才刚穿越？在线阅读" data-eid="qd_A176" data-bid="1045829425" target="_blank">我都满级号了，你们才刚穿越？</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="废土" target="_blank">废土</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045808916/" class="name" title="重生2015，高中开始做男神在线阅读" data-eid="qd_A176" data-bid="1045808916" target="_blank">重生2015，高中开始做男神</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="重生" target="_blank">重生</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045764990/" class="name" title="华娱：屁股坐正了吗？你就当导演在线阅读" data-eid="qd_A176" data-bid="1045764990" target="_blank">华娱：屁股坐正了吗？你就当导演</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="华娱" target="_blank">华娱</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045775116/" class="name" title="火红年代：从钳工开始成科技巨头在线阅读" data-eid="qd_A176" data-bid="1045775116" target="_blank">火红年代：从钳工开始成科技巨头</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="重生" target="_blank">重生</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045574743/" class="name" title="食气长生，我为妖庭主在线阅读" data-eid="qd_A176" data-bid="1045574743" target="_blank">食气长生，我为妖庭主</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="仙侠" target="_blank">仙侠</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="strongrec-list book-list-wrap">
+                    <h3 class="date-range-title">
+                        <span class="date-from">2025.08.31</span>
+                        -<span class="date-to">2025.09.07</span>
+                    </h3>
+                    <div class="book-list">
+                        <ul>
+                            <li>
+                                <a href="//www.qidian.com/kehuan/" class="channel" data-eid="qd_A175" target="_blank" title="科幻类小说大全">
+                                    <em>「</em>
+                                    科幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045674747/" class="name" title="科研系学霸在线阅读" data-eid="qd_A176" data-bid="1045674747" target="_blank">科研系学霸</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="学霸" target="_blank">学霸</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/zhutianwuxian/" class="channel" data-eid="qd_A175" target="_blank" title="诸天无限类小说大全">
+                                    <em>「</em>
+                                    诸天无限<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045662716/" class="name" title="末日生存整合包在线阅读" data-eid="qd_A176" data-bid="1045662716" target="_blank">末日生存整合包</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="MC" target="_blank">MC</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045657181/" class="name" title="这NPC不削能玩？在线阅读" data-eid="qd_A176" data-bid="1045657181" target="_blank">这NPC不削能玩？</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="轻松无敌" target="_blank">轻松无敌</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/qihuan/" class="channel" data-eid="qd_A175" target="_blank" title="奇幻类小说大全">
+                                    <em>「</em>
+                                    奇幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1043621086/" class="name" title="希腊神话：洞穴之神在线阅读" data-eid="qd_A176" data-bid="1043621086" target="_blank">希腊神话：洞穴之神</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="希腊神话" target="_blank">希腊神话</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045532933/" class="name" title="唯我独法：奇幻系日常在线阅读" data-eid="qd_A176" data-bid="1045532933" target="_blank">唯我独法：奇幻系日常</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="奇幻" target="_blank">奇幻</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/tiyu/" class="channel" data-eid="qd_A175" target="_blank" title="体育类小说大全">
+                                    <em>「</em>
+                                    体育<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045817392/" class="name" title="曼联王储，但不会踢球在线阅读" data-eid="qd_A176" data-bid="1045817392" target="_blank">曼联王储，但不会踢球</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="足球" target="_blank">足球</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045779850/" class="name" title="我在诸神游戏里杀疯了在线阅读" data-eid="qd_A176" data-bid="1045779850" target="_blank">我在诸神游戏里杀疯了</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="诸神" target="_blank">诸神</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045785966/" class="name" title="你对死灵法师有意见？在线阅读" data-eid="qd_A176" data-bid="1045785966" target="_blank">你对死灵法师有意见？</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="亡灵" target="_blank">亡灵</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045659874/" class="name" title="斗罗：天使圣徒霍雨浩在线阅读" data-eid="qd_A176" data-bid="1045659874" target="_blank">斗罗：天使圣徒霍雨浩</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="斗罗" target="_blank">斗罗</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045558346/" class="name" title="盛唐：刘建军今天要干嘛在线阅读" data-eid="qd_A176" data-bid="1045558346" target="_blank">盛唐：刘建军今天要干嘛</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="盛唐" target="_blank">盛唐</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/kehuan/" class="channel" data-eid="qd_A175" target="_blank" title="科幻类小说大全">
+                                    <em>「</em>
+                                    科幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045628378/" class="name" title="我把修仙文明上交给了国家在线阅读" data-eid="qd_A176" data-bid="1045628378" target="_blank">我把修仙文明上交给了国家</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="举国流" target="_blank">举国流</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045555725/" class="name" title="超神：什么叫银河之力啊！在线阅读" data-eid="qd_A176" data-bid="1045555725" target="_blank">超神：什么叫银河之力啊！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="超神" target="_blank">超神</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/youxi/" class="channel" data-eid="qd_A175" target="_blank" title="游戏类小说大全">
+                                    <em>「</em>
+                                    游戏<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045659815/" class="name" title="你这辈子就是让游戏给害了！在线阅读" data-eid="qd_A176" data-bid="1045659815" target="_blank">你这辈子就是让游戏给害了！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="二次元" target="_blank">二次元</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045317879/" class="name" title="还写什么歌，快进到不要笑挑战在线阅读" data-eid="qd_A176" data-bid="1045317879" target="_blank">还写什么歌，快进到不要笑挑战</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="文娱" target="_blank">文娱</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045646736/" class="name" title="我的道姑女友来自民国1942在线阅读" data-eid="qd_A176" data-bid="1045646736" target="_blank">我的道姑女友来自民国1942</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="报恩" target="_blank">报恩</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045723440/" class="name" title="开局掌控魏忠贤，先抄他一个亿！在线阅读" data-eid="qd_A176" data-bid="1045723440" target="_blank">开局掌控魏忠贤，先抄他一个亿！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="大明" target="_blank">大明</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045591018/" class="name" title="北宋：剧透未来，赵匡胤崩溃了在线阅读" data-eid="qd_A176" data-bid="1045591018" target="_blank">北宋：剧透未来，赵匡胤崩溃了</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="大宋" target="_blank">大宋</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="strongrec-list book-list-wrap">
+                    <h3 class="date-range-title">
+                        <span class="date-from">2025.08.24</span>
+                        -<span class="date-to">2025.08.31</span>
+                    </h3>
+                    <div class="book-list">
+                        <ul>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045583754/" class="name" title="隐秘买家在线阅读" data-eid="qd_A176" data-bid="1045583754" target="_blank">隐秘买家</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="高武" target="_blank">高武</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1044896207/" class="name" title="以神通之名在线阅读" data-eid="qd_A176" data-bid="1044896207" target="_blank">以神通之名</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="神通" target="_blank">神通</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045646235/" class="name" title="班？狗都不上！在线阅读" data-eid="qd_A176" data-bid="1045646235" target="_blank">班？狗都不上！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="都市" target="_blank">都市</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/qihuan/" class="channel" data-eid="qd_A175" target="_blank" title="奇幻类小说大全">
+                                    <em>「</em>
+                                    奇幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045421153/" class="name" title="占星家忽悠着你在线阅读" data-eid="qd_A176" data-bid="1045421153" target="_blank">占星家忽悠着你</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="奇幻" target="_blank">奇幻</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/kehuan/" class="channel" data-eid="qd_A175" target="_blank" title="科幻类小说大全">
+                                    <em>「</em>
+                                    科幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045576531/" class="name" title="四十九条末世规则在线阅读" data-eid="qd_A176" data-bid="1045576531" target="_blank">四十九条末世规则</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="科幻" target="_blank">科幻</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/zhutianwuxian/" class="channel" data-eid="qd_A175" target="_blank" title="诸天无限类小说大全">
+                                    <em>「</em>
+                                    诸天无限<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045539342/" class="name" title="漫威世界的唯一玩家在线阅读" data-eid="qd_A176" data-bid="1045539342" target="_blank">漫威世界的唯一玩家</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="漫威" target="_blank">漫威</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/wuxia/" class="channel" data-eid="qd_A175" target="_blank" title="武侠类小说大全">
+                                    <em>「</em>
+                                    武侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045382417/" class="name" title="速通武林，拳镇诸天！在线阅读" data-eid="qd_A176" data-bid="1045382417" target="_blank">速通武林，拳镇诸天！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="武林" target="_blank">武林</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045529291/" class="name" title="东京，我的青梅是怪谈在线阅读" data-eid="qd_A176" data-bid="1045529291" target="_blank">东京，我的青梅是怪谈</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="病娇" target="_blank">病娇</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/qihuan/" class="channel" data-eid="qd_A175" target="_blank" title="奇幻类小说大全">
+                                    <em>「</em>
+                                    奇幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045343096/" class="name" title="超魔术士：开局魔网又崩了在线阅读" data-eid="qd_A176" data-bid="1045343096" target="_blank">超魔术士：开局魔网又崩了</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="DND" target="_blank">DND</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/zhutianwuxian/" class="channel" data-eid="qd_A175" target="_blank" title="诸天无限类小说大全">
+                                    <em>「</em>
+                                    诸天无限<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045644836/" class="name" title="谁让你带工业邪神穿越的？在线阅读" data-eid="qd_A176" data-bid="1045644836" target="_blank">谁让你带工业邪神穿越的？</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="异界" target="_blank">异界</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045657767/" class="name" title="我有无限死士，暴兵横推诸天在线阅读" data-eid="qd_A176" data-bid="1045657767" target="_blank">我有无限死士，暴兵横推诸天</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="暴兵" target="_blank">暴兵</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/youxi/" class="channel" data-eid="qd_A175" target="_blank" title="游戏类小说大全">
+                                    <em>「</em>
+                                    游戏<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045566283/" class="name" title="LOL：我真没想当喜剧人啊在线阅读" data-eid="qd_A176" data-bid="1045566283" target="_blank">LOL：我真没想当喜剧人啊</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="LOL" target="_blank">LOL</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/youxi/" class="channel" data-eid="qd_A175" target="_blank" title="游戏类小说大全">
+                                    <em>「</em>
+                                    游戏<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045579684/" class="name" title="你把人家皇帝防到战俘营了？在线阅读" data-eid="qd_A176" data-bid="1045579684" target="_blank">你把人家皇帝防到战俘营了？</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="战争" target="_blank">战争</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1043127479/" class="name" title="死刑变无罪？谁叫他做侦探的！在线阅读" data-eid="qd_A176" data-bid="1043127479" target="_blank">死刑变无罪？谁叫他做侦探的！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="刑侦" target="_blank">刑侦</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045582790/" class="name" title="大明：让你死谏，你怎么真死啊？在线阅读" data-eid="qd_A176" data-bid="1045582790" target="_blank">大明：让你死谏，你怎么真死啊？</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="大明" target="_blank">大明</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045400385/" class="name" title="道起五脏观：我在九十年代当天师在线阅读" data-eid="qd_A176" data-bid="1045400385" target="_blank">道起五脏观：我在九十年代当天师</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="诡异" target="_blank">诡异</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/tiyu/" class="channel" data-eid="qd_A175" target="_blank" title="体育类小说大全">
+                                    <em>「</em>
+                                    体育<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045697945/" class="name" title="贷款总冠军：从拿了阿摊剧本开始在线阅读" data-eid="qd_A176" data-bid="1045697945" target="_blank">贷款总冠军：从拿了阿摊剧本开始</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="ＮＢＡ" target="_blank">ＮＢＡ</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="strongrec-list book-list-wrap">
+                    <h3 class="date-range-title">
+                        <span class="date-from">2025.08.17</span>
+                        -<span class="date-to">2025.08.24</span>
+                    </h3>
+                    <div class="book-list">
+                        <ul>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045391192/" class="name" title="俗仙在线阅读" data-eid="qd_A176" data-bid="1045391192" target="_blank">俗仙</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="古典" target="_blank">古典</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045632933/" class="name" title="沸腾时代在线阅读" data-eid="qd_A176" data-bid="1045632933" target="_blank">沸腾时代</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="小人物" target="_blank">小人物</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/tiyu/" class="channel" data-eid="qd_A175" target="_blank" title="体育类小说大全">
+                                    <em>「</em>
+                                    体育<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045722134/" class="name" title="篮坛神迹在线阅读" data-eid="qd_A176" data-bid="1045722134" target="_blank">篮坛神迹</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="篮球" target="_blank">篮球</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/kehuan/" class="channel" data-eid="qd_A175" target="_blank" title="科幻类小说大全">
+                                    <em>「</em>
+                                    科幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045526489/" class="name" title="末日美利坚在线阅读" data-eid="qd_A176" data-bid="1045526489" target="_blank">末日美利坚</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="末日" target="_blank">末日</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045457037/" class="name" title="贫道要考大学在线阅读" data-eid="qd_A176" data-bid="1045457037" target="_blank">贫道要考大学</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="吻猪" target="_blank">吻猪</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045623528/" class="name" title="东京病恋女友在线阅读" data-eid="qd_A176" data-bid="1045623528" target="_blank">东京病恋女友</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="恋爱" target="_blank">恋爱</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045550807/" class="name" title="王妃，请自重在线阅读" data-eid="qd_A176" data-bid="1045550807" target="_blank">王妃，请自重</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="玄幻" target="_blank">玄幻</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045474333/" class="name" title="我在唐朝当神仙在线阅读" data-eid="qd_A176" data-bid="1045474333" target="_blank">我在唐朝当神仙</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="长生" target="_blank">长生</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045526336/" class="name" title="大哥说我天下无敌在线阅读" data-eid="qd_A176" data-bid="1045526336" target="_blank">大哥说我天下无敌</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="白金" target="_blank">白金</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/qihuan/" class="channel" data-eid="qd_A175" target="_blank" title="奇幻类小说大全">
+                                    <em>「</em>
+                                    奇幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045525701/" class="name" title="谁把遗言落这了？在线阅读" data-eid="qd_A176" data-bid="1045525701" target="_blank">谁把遗言落这了？</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="超凡" target="_blank">超凡</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045440904/" class="name" title="大明王朝1627在线阅读" data-eid="qd_A176" data-bid="1045440904" target="_blank">大明王朝1627</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="崇祯" target="_blank">崇祯</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/zhutianwuxian/" class="channel" data-eid="qd_A175" target="_blank" title="诸天无限类小说大全">
+                                    <em>「</em>
+                                    诸天无限<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045530594/" class="name" title="诸天，从小李飞刀开始在线阅读" data-eid="qd_A176" data-bid="1045530594" target="_blank">诸天，从小李飞刀开始</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="诸天" target="_blank">诸天</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045474271/" class="name" title="网球：他实在太听劝了！在线阅读" data-eid="qd_A176" data-bid="1045474271" target="_blank">网球：他实在太听劝了！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="都市" target="_blank">都市</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045561279/" class="name" title="百世修仙：我能固定天赋在线阅读" data-eid="qd_A176" data-bid="1045561279" target="_blank">百世修仙：我能固定天赋</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="百世仙" target="_blank">百世仙</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1044108943/" class="name" title="当过明星吗，你就写文娱？在线阅读" data-eid="qd_A176" data-bid="1044108943" target="_blank">当过明星吗，你就写文娱？</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="文抄明星" target="_blank">文抄明星</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045528036/" class="name" title="长生：筑基成功后，外挂才开启在线阅读" data-eid="qd_A176" data-bid="1045528036" target="_blank">长生：筑基成功后，外挂才开启</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="修仙" target="_blank">修仙</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045502430/" class="name" title="美漫农场主：开局收养恶人救世主在线阅读" data-eid="qd_A176" data-bid="1045502430" target="_blank">美漫农场主：开局收养恶人救世主</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="美漫" target="_blank">美漫</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="strongrec-list book-list-wrap">
+                    <h3 class="date-range-title">
+                        <span class="date-from">2025.08.10</span>
+                        -<span class="date-to">2025.08.17</span>
+                    </h3>
+                    <div class="book-list">
+                        <ul>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045336850/" class="name" title="镜主在线阅读" data-eid="qd_A176" data-bid="1045336850" target="_blank">镜主</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="热血" target="_blank">热血</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1044394624/" class="name" title="状元郎在线阅读" data-eid="qd_A176" data-bid="1044394624" target="_blank">状元郎</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="白金" target="_blank">白金</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045338276/" class="name" title="祥子修仙记在线阅读" data-eid="qd_A176" data-bid="1045338276" target="_blank">祥子修仙记</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="祥子" target="_blank">祥子</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045424909/" class="name" title="蜀山剑仙列传在线阅读" data-eid="qd_A176" data-bid="1045424909" target="_blank">蜀山剑仙列传</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="蜀山" target="_blank">蜀山</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045422364/" class="name" title="混在大巫中的人族在线阅读" data-eid="qd_A176" data-bid="1045422364" target="_blank">混在大巫中的人族</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="洪荒" target="_blank">洪荒</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/qihuan/" class="channel" data-eid="qd_A175" target="_blank" title="奇幻类小说大全">
+                                    <em>「</em>
+                                    奇幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045346552/" class="name" title="蒸汽世界的鼠先生在线阅读" data-eid="qd_A176" data-bid="1045346552" target="_blank">蒸汽世界的鼠先生</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="鼠先生" target="_blank">鼠先生</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045429237/" class="name" title="今天也在努力做魔头在线阅读" data-eid="qd_A176" data-bid="1045429237" target="_blank">今天也在努力做魔头</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="大神" target="_blank">大神</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xuanhuan/" class="channel" data-eid="qd_A175" target="_blank" title="玄幻类小说大全">
+                                    <em>「</em>
+                                    玄幻<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045435367/" class="name" title="在天魔世界的摆烂生活在线阅读" data-eid="qd_A176" data-bid="1045435367" target="_blank">在天魔世界的摆烂生活</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="天魔" target="_blank">天魔</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045415932/" class="name" title="红楼：我能升级词条！在线阅读" data-eid="qd_A176" data-bid="1045415932" target="_blank">红楼：我能升级词条！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="红楼" target="_blank">红楼</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/2cy/" class="channel" data-eid="qd_A175" target="_blank" title="轻小说大全">
+                                    <em>「</em>
+                                    轻小说<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045423245/" class="name" title="柯南：我在东京当财阀在线阅读" data-eid="qd_A176" data-bid="1045423245" target="_blank">柯南：我在东京当财阀</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="柯南" target="_blank">柯南</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/zhutianwuxian/" class="channel" data-eid="qd_A175" target="_blank" title="诸天无限类小说大全">
+                                    <em>「</em>
+                                    诸天无限<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045426509/" class="name" title="古龙世界里的第一深情在线阅读" data-eid="qd_A176" data-bid="1045426509" target="_blank">古龙世界里的第一深情</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="大侠客" target="_blank">大侠客</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045411336/" class="name" title="大明：陛下，该喝药了！在线阅读" data-eid="qd_A176" data-bid="1045411336" target="_blank">大明：陛下，该喝药了！</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="大明" target="_blank">大明</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045468383/" class="name" title="水元成神，终为天地山川主在线阅读" data-eid="qd_A176" data-bid="1045468383" target="_blank">水元成神，终为天地山川主</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="神道" target="_blank">神道</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/lishi/" class="channel" data-eid="qd_A175" target="_blank" title="历史类小说大全">
+                                    <em>「</em>
+                                    历史<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045468807/" class="name" title="偷偷告诉你，我是大汉皇太孙在线阅读" data-eid="qd_A176" data-bid="1045468807" target="_blank">偷偷告诉你，我是大汉皇太孙</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="大汉" target="_blank">大汉</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/xianxia/" class="channel" data-eid="qd_A175" target="_blank" title="仙侠类小说大全">
+                                    <em>「</em>
+                                    仙侠<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1044859507/" class="name" title="都中状元了，你告诉我这是西游？在线阅读" data-eid="qd_A176" data-bid="1044859507" target="_blank">都中状元了，你告诉我这是西游？</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="西游" target="_blank">西游</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/dushi/" class="channel" data-eid="qd_A175" target="_blank" title="都市类小说大全">
+                                    <em>「</em>
+                                    都市<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045318171/" class="name" title="半岛：从躲在idol衣柜里开始在线阅读" data-eid="qd_A176" data-bid="1045318171" target="_blank">半岛：从躲在idol衣柜里开始</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="都市" target="_blank">都市</span>
+                            </li>
+                            <li>
+                                <a href="//www.qidian.com/youxi/" class="channel" data-eid="qd_A175" target="_blank" title="游戏类小说大全">
+                                    <em>「</em>
+                                    游戏<em>」</em>
+                                </a>
+                                <strong>
+                                    <h2>
+                                        <a href="//www.qidian.com/book/1045109595/" class="name" title="说好摆烂拍电影，年度游戏什么鬼在线阅读" data-eid="qd_A176" data-bid="1045109595" target="_blank">说好摆烂拍电影，年度游戏什么鬼</a>
+                                    </h2>
+                                </strong>
+                                <span class="rec" title="文化入侵" target="_blank">文化入侵</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="page-box box-center cf" data-l1="1">
+                <div class="pagination fr" id="page-container" data-eid="qd_C44" data-pagemax="42" data-page="1">
+                    <div class="lbf-pagination">
+                        <ul class="lbf-pagination-item-list">
+                            <li class="lbf-pagination-item">
+                                <a href="javascript:;" class="lbf-pagination-prev lbf-pagination-disabled">&lt;</a>
+                            </li>
+                            <li class="lbf-pagination-item">
+                                <a data-page="1" href="//www.qidian.com/sanjiang/" class="lbf-pagination-page  lbf-pagination-current">1</a>
+                            </li>
+                            <li class="lbf-pagination-item">
+                                <a data-page="2" href="//www.qidian.com/sanjiang/page2/" class="lbf-pagination-page  ">2</a>
+                            </li>
+                            <li class="lbf-pagination-item">
+                                <a data-page="3" href="//www.qidian.com/sanjiang/page3/" class="lbf-pagination-page  ">3</a>
+                            </li>
+                            <li class="lbf-pagination-item">
+                                <a data-page="4" href="//www.qidian.com/sanjiang/page4/" class="lbf-pagination-page  ">4</a>
+                            </li>
+                            <li class="lbf-pagination-item">
+                                <a data-page="5" href="//www.qidian.com/sanjiang/page5/" class="lbf-pagination-page  ">5</a>
+                            </li>
+                            <li class="lbf-pagination-item">
+                                <span class="lbf-pagination-ellipsis">...</span>
+                            </li>
+                            <li class="lbf-pagination-item">
+                                <a data-page="42" href="//www.qidian.com/sanjiang/page42/" class="lbf-pagination-page  ">42</a>
+                            <li class="lbf-pagination-item">
+                                <a href="//www.qidian.com/sanjiang/page2/" class="lbf-pagination-next ">&gt;</a>
+                            </li>
+                        </ul>
+                        <script>
+                            function setParam(param, paramVal, url, customHost) {
+                                customHost = customHost.replace(/\/*$/, "");
+                                if (!url) {
+                                    url = "javascript:;";
+                                    return url
+                                }
+                                url = url.replace(/\?[\s\S]+?(?=(#|$))/, "");
+                                var theAnchor = null;
+                                var newAdditionalURL = "";
+                                var baseURL = "";
+                                if (url === customHost) {
+                                    baseURL = customHost
+                                }
+                                var additionalURL = url.replace(customHost + "/", "");
+                                var temp = "";
+                                if (additionalURL) {
+                                    var tmpAnchor = additionalURL.split("#");
+                                    var TheParams = tmpAnchor[0];
+                                    theAnchor = tmpAnchor[1];
+                                    if (theAnchor) {
+                                        additionalURL = TheParams
+                                    }
+                                    additionalURL = additionalURL.replace(/((^\/*)|(\/*$))/g, "");
+                                    var queryTempArray = additionalURL.split("-");
+                                    for (o = 0; o < queryTempArray.length; o++) {
+                                        if (queryTempArray[o].indexOf(param) === -1) {
+                                            newAdditionalURL += temp + queryTempArray[o];
+                                            if (customHost.indexOf("/rank") > 0) {
+                                                temp = queryTempArray[o].match(/(month|year)/) ? "-" : "/";
+                                            } else {
+                                                temp = "-"
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    var tmpAnchor = baseURL.split("#");
+                                    var TheParams = tmpAnchor[0];
+                                    theAnchor = tmpAnchor[1];
+                                    if (TheParams) {
+                                        baseURL = TheParams
+                                    }
+                                }
+                                if (theAnchor) {
+                                    paramVal += "#" + theAnchor
+                                }
+                                if (paramVal == 1) {
+                                    var rowsTxt = temp
+                                } else {
+                                    var rowsTxt = (temp + param + paramVal + "/").replace(/[-/]?pagek\/*(?=[^0])/, "/");
+                                }
+                                return (customHost + "/" + newAdditionalURL + rowsTxt).replace(/\/*$/, "/")
+                            }
+                            function PAGINATION_goInput() {
+                                location.href = setParam("page", document.getElementById("PAGINATION-INPUT").value, "//www.qidian.com/sanjiang/", "//www.qidian.com/sanjiang/")
+                            }
+                        </script>
+                        <div class="lbf-pagination-jump">
+                            <input id="PAGINATION-INPUT" type="text" class="lbf-pagination-input" value="1"/>
+                            <a href="javascript:;" id="PAGINATION-BUTTON" onclick=PAGINATION_goInput() class="lbf-pagination-go">GO</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="box-center cf">
+                    <div class="footer-menu dib-wrap">
+                        <a href="//www.qidian.com/about/intro" target="_blank">关于起点</a>
+                        <a href="//www.qidian.com/about/contact" target="_blank">联系我们</a>
+                        <a href="//join.yuewen.com" rel="nofollow" target="_blank">加入我们</a>
+                        <a href="//www.qidian.com/help" target="_blank">帮助与客服</a>
+                        <a href="//jubao.yuewen.com" rel="nofollow" target="_blank">举报中心</a>
+                        <a href="//security.tencent.com/" rel="nofollow" target="_blank">漏洞提交</a>
+                    </div>
+                    <div class="copy-right">
+                        <p>
+                            <span>Copyright &copy;2002-2025 www.qidian.com All Rights Reserved 版权所有 上海玄霆娱乐信息科技有限公司</span>
+                        </p>
+                        <p>
+                            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011502001275">
+                                <img src="https://imgservices-1252317822.image.myqcloud.com/image/20191223/o5lajshfcw.png"/>
+                                <span>沪公网安备 31011502001275号</span>
+                            </a>
+                            <span>增值电信业务经营许可证：沪B2-20080046 互联网ICP备案号：</span>
+                            <a href="http://beian.miit.gov.cn" target="_blank">沪B2-20080046-1</a>
+                            <span>&nbsp;出版经营许可证：新出发沪批字第 U3718 号</span>
+                        </p>
+                        <p>
+                            <span>网络文化经营许可证：沪网文(2023)4752-318号 网络出版服务许可证：（署）网出证（沪）字第055号 &nbsp;</span>
+                            <a target="_blank" href="https://imgservices-1252317822.image.myqcloud.com/coco/s06182025/e666b653.vylzij.jpg">营业执照</a>
+                            &nbsp;&nbsp;
+                            <a target="_blank" href="https://imgservices-1252317822.image.myqcloud.com/coco/s11062023/655b2b94.f2jl6x.png">
+                                <span>互联网宗教信息服务许可证 编号：沪（2022）0000022</span>
+                            </a>
+                        </p>
+                        <p>请所有作者发布作品时务必遵守国家互联网信息管理办法规定，我们拒绝任何色情小说，一经发现，即作删除！举报电话：010-59357051</p>
+                        <p>本站所收录的作品、社区话题、用户评论、用户上传内容或图片等均属用户个人行为。如前述内容侵害您的权益，欢迎举报投诉，一经核实，立即删除，本站不承担任何责任</p>
+                        <p>联系方式 总机 021-61870500 地址：中国（上海）自由贸易试验区环科路999弄1号706室</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var g_data = {
+                envType: "pro",
+                pageId: "qd_P_sanjiang",
+                url: "//www.qidian.com/all",
+                domainSearch: "www.qidian.com/soushu"
+            }
+        </script>
+    </body>
+</html>

@@ -20,14 +20,28 @@
       {
         "command": "touchfish-book.zzh",
         "title": "打开看书标签"
+      },
+      {
+        "command": "touchfish-book.refreshQidian",
+        "title": "刷新起点三江",
+        "icon": "$(refresh)"
       }
     ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "touchfish-book.refreshQidian",
+          "when": "view == qidian",
+          "group": "navigation"
+        }
+      ]
+    },
     "viewsContainers": {
       "activitybar": [
         {
-        "id": "touchfish-book",
-        "title": "摸鱼看书",
-        "icon": "resources/book.svg"
+          "id": "touchfish-book",
+          "title": "摸鱼看书",
+          "icon": "resources/book.svg"
         }
       ]
     },
@@ -53,14 +67,18 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.105.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
+    "@types/vscode": "^1.105.0",
     "@typescript-eslint/eslint-plugin": "^8.45.0",
     "@typescript-eslint/parser": "^8.45.0",
-    "eslint": "^9.36.0",
-    "typescript": "^5.9.3",
     "@vscode/test-cli": "^0.0.11",
-    "@vscode/test-electron": "^2.5.2"
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.36.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "cheerio": "^1.1.2"
   }
 }
