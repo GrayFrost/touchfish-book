@@ -25,9 +25,9 @@
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "touchfish-book",
-          "title": "摸鱼看书",
-          "icon": "resources/icon.svg"
+        "id": "touchfish-book",
+        "title": "摸鱼看书",
+        "icon": "resources/book.svg"
         }
       ]
     },
